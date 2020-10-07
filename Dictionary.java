@@ -24,14 +24,16 @@ public class Dictionary1 {
 				 );
 	 }
 	 public void countByState(String state) {
-		
+		 //int count = (int)statePersonDictionary.entrySet().stream().filter(e -> e.getKey().equals(state)).
+			//	 map(Map.Entry::getValue).count();
 		 List<String> names = statePersonDictionary.entrySet().stream().filter(e -> e.getKey().equals(state))
 				                       .map(Map.Entry :: getValue).collect(Collectors.toList());
 		 System.out.println(names);
 		 System.out.println(names.size());
 	 }
 	 public void countByCity(String city) {
-		
+		 //int count = (int)statePersonDictionary.entrySet().stream().filter(e -> e.getKey().equals(city)).
+			//	 map(Map.Entry::getValue).count();
 		 List<String> names = statePersonDictionary.entrySet().stream().filter(e -> e.getKey().equals(city))
                  .map(Map.Entry :: getValue).collect(Collectors.toList());
          System.out.println(names);
