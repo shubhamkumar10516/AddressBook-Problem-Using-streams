@@ -12,6 +12,7 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class AddressBookProblemTest {
 
+        // Testing whether contact got added to csv file or not
 	@Test
 	public void AddingToCsvFileTest() throws CsvDataTypeMismatchException, CsvRequiredFieldEmptyException, IOException {
 		AddressBook addressBook = new AddressBook();

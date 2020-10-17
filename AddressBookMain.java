@@ -13,7 +13,6 @@ import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class AddressBookMain {
-        Path filePath = Paths.get("/home/shubham/bridgeLabAssignment/addrBook.txt");
 	private static Dictionary dict = new Dictionary();
 	private static Contact contact = null;
 	private static Scanner sc = new Scanner(System.in);
