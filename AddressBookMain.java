@@ -13,7 +13,7 @@ import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class AddressBookMain {
-
+        Path filePath = Paths.get("/home/shubham/bridgeLabAssignment/addrBook.txt");
 	private static Dictionary dict = new Dictionary();
 	private static Contact contact = null;
 	private static Scanner sc = new Scanner(System.in);
@@ -34,7 +34,7 @@ public class AddressBookMain {
 		Contact contact = new Contact(name, city, state, zip, ph);
 		addBook.addContact(contact);
 		dict.addToDictionary(name, state, city);
-		return contact;
+                return contact;
 	}
 
 	public static Contact editContact(String name) {
@@ -74,18 +74,7 @@ public class AddressBookMain {
 		}
 		return contact;
 	}
-	/*
-	 * // adding list as csv file public static void addToCsvFile(boolean checkAdd)
-	 * throws IOException, CsvDataTypeMismatchException,
-	 * CsvRequiredFieldEmptyException {
-	 * 
-	 * Writer writer = Files.newBufferedWriter(Paths.get(OBJECT_LIST_SAMPLE));
-	 * StatefulBeanToCsv<Contact> beanToCsv = new StatefulBeanToCsvBuilder(writer)
-	 * .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER) .build(); List<Contact>
-	 * contactList = new ArrayList<>(); if(checkAdd)
-	 * contactList.add(addContacts(addBook)); beanToCsv.write(contactList); }
-	 */
-
+	
 	public static void main(String[] args)
 			throws CsvDataTypeMismatchException, CsvRequiredFieldEmptyException, IOException {
 		// Displaying Welcome message
