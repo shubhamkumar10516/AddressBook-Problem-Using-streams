@@ -1,9 +1,10 @@
-package com.academy.AddressBookMain;
+package com.bridgelab.addressBookProblem;
+
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Dictionary1 {
+public class Dictionary {
 
 	 HashMap<String , String>  cityPersonDictionary = new HashMap<>();
 	 HashMap<String , String>  statePersonDictionary = new HashMap<>();

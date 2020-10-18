@@ -12,12 +12,18 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class AddressBookProblemTest {
 
-        // Testing whether contact got added to csv file or not
 	@Test
 	public void AddingToCsvFileTest() throws CsvDataTypeMismatchException, CsvRequiredFieldEmptyException, IOException {
 		AddressBook addressBook = new AddressBook();
 		addressBook.addContact(new Contact("Shubham", "Gaya", "Bihar", 82300, 12334));
 		addressBook.addContact(new Contact("Shu", "Pune", "Mah", 88923001, 873512));
 		 assertTrue(2== addressBook.addToCsvFile());
+	}
+	
+	@Test
+	public void AddingToJsonFileTest() throws IOException {
+		AddressBook addressBook = new AddressBook();
+		addressBook.addedToJson(new Contact("Shubham", "Gaya", "Bihar", 82300, 12334));
+		addressBook.addedToJson(new Contact("Shu", "Pune", "Mah", 88923001, 873512));
 	}
 }

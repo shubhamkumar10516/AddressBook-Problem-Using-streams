@@ -1,5 +1,6 @@
 package com.bridgelab.addressBookProblem;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -14,15 +15,24 @@ import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
-
+import com.google.gson.*;
+import org.json.simple.JSONArray;
 public class AddressBook {
 	private static final String OBJECT_LIST_SAMPLE = "/home/shubham/Desktop/BridgeAssignment/addressBook-list.csv";
 	private List<Contact> cList = new ArrayList<>();
-
-	public void addContact(Contact contact) {
+	Gson gson = new Gson();
+	public void addContact(Contact contact) throws IOException {
 		System.out.println("ADDING--->");
 		cList.add(contact);
-		System.out.println("Contact added!!");
+		addedToJson(contact);
+	}
+
+	public void addedToJson(Contact contact) throws IOException {
+		 FileWriter fileWriter = new FileWriter("contact.json");
+		 gson.toJson(contact, fileWriter);
+		// JsonArray.add(gson);
+		 fileWriter.close();
+		 System.out.println("JSON string write to a file successfully");
 	}
 
 	public Contact returnContact(String name) {

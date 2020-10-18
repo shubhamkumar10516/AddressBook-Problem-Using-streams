@@ -13,6 +13,7 @@ import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class AddressBookMain {
+
 	private static Dictionary dict = new Dictionary();
 	private static Contact contact = null;
 	private static Scanner sc = new Scanner(System.in);
@@ -33,7 +34,7 @@ public class AddressBookMain {
 		Contact contact = new Contact(name, city, state, zip, ph);
 		addBook.addContact(contact);
 		dict.addToDictionary(name, state, city);
-                return contact;
+		return contact;
 	}
 
 	public static Contact editContact(String name) {
@@ -73,7 +74,6 @@ public class AddressBookMain {
 		}
 		return contact;
 	}
-	
 	public static void main(String[] args)
 			throws CsvDataTypeMismatchException, CsvRequiredFieldEmptyException, IOException {
 		// Displaying Welcome message
